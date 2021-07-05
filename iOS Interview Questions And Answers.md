@@ -1,6 +1,36 @@
 # iOS Interview Questions And Answers
 
-###How could you set up Live Rendering?
+
+###  Explain Data Structures
+
+Arrays, Sets, Tuples, and Dictionaries are all collections of data structures that store data in one place.
+
+
+###  Explain CodingKey Protocol
+The CodingKeys enum ( Protocol ) lets you rename specific properties in case the serialized format doesn’t match the requirements of the API. CodingKeys should have nested enum.
+
+
+###  What is URLSession?
+When we want to retrieve contents from a certain URL, we choose to use URLConnection. There are three types of tasks:
+
+* Data tasks: getting data to memory
+* Download tasks: downloading file to disk
+* Upload tasks: uploading file from disk and receiving response as data in memory
+
+
+### How do we download images?
+With URLSession, we can download an image as a data then convert it from NSData to UIImage lastly we connect it UIImageView IBOutlet. Better way is to use a library. Also with URLSession Adaptable Connectivity API we can built-in connectivity monitoring and run a request if there is no connection. The request will wait and download whenever the resource is available instead of failing.
+
+### How does TestFlight make a difference?
+* Multiple builds distribution
+* Testing groups
+* Internal auto distribution
+* Tester metrics
+* Increased to 10,000 test users
+* Public Link
+
+
+### How could you set up Live Rendering?
 The attribute @IBDesignable lets Interface Builder perform live updates on a particular view. IBDesignable requires Init frame to be defined as well in UIView class.
 
 ### What is the difference between Synchronous & Asynchronous task?
@@ -458,3 +488,448 @@ Disadvantages of Linked Lists, at the beginning, there is extra space usage. Bec
 
 
 node.js + express.js and mongodb. OR, you can learn Vapor or Kitura. Firebase
+
+
+###  Explain AutoLayout
+AutoLayout provides a flexible and powerful layout system that describes how views and the UI controls calculates the size and position in the hierarchy.
+
+
+### What is the disadvantage to hard-coding log statements ?
+First, when you start to log. This starts to accumulate. It may not seem like a lot, but every minute adds up. By the end of a project, those stray minutes will equal to hours.
+Second, Each time we add one to the code base, we take a risk of injecting new bugs into our code.
+
+
+###  What is Pointer ?
+
+A pointer is a direct reference to a memory address. Whereas a variable acts as a transparent container for a value, pointers remove a layer of abstraction and let you see how that value is stored.
+
+###  What is Keychain ?
+Keychain is an API for persisting data securly in iOS App. It is secured using a hardware module and is backed up to iCloud.
+
+###  What is the biggest changes in UserNotifications ?
+We can add audio, video and images.
+We can create custom interfaces for notifications.
+We can manage notifications with interfaces in the notification center.
+New Notification extensions allow us to manage remote notification payloads before they’re delivered.
+
+### Explain the difference between atomic and nonatomic synthesized properties
+
+***atomic*** : It is the default behaviour. If an object is declared as atomic then it becomes thread-safe. Thread-safe means, at a time only one thread of a particular instance of that class can have the control over that object.
+***nonatomic***: It is not thread-safe. We can use the nonatomic property attribute to specify that synthesized accessors simply set or return a value directly, with no guarantees about what happens if that same value is accessed simultaneously from different threads. For this reason, it’s faster to access a nonatomic property than an atomic one.
+
+### How could we get device token ?
+
+There are two steps to get device token. First, we must show the user’s permission screen, after we can register for remote notifications. If these steps go well, the system will provide device token. If we uninstall or reinstall the app, the device token would change.
+
+### What is Encapsulation ?
+Encapsulation is an object-oriented design principles and hides the internal states and functionality of objects. That means objects keep their state information private.
+
+
+### What is big-o notation ?
+
+An algorithm is an impression method used to determine the working time for an input N size. The big-o notation grade is expressed by the highest value. And the big-o notation is finding the answer with the question of O(n). Here is a cheat sheet and swift algorithm club. For example;
+
+```
+For Loops big-o notation is O(N). Because For Loops work n times.
+
+Variables (var number:Int = 4) big-o notation is O(1).
+```
+
+ 
+### Explain throw
+We are telling the compiler that it can throw errors by using the throws keyword. Before we can throw an error, we need to make a list of all the possible errors you want to throw.
+
+
+### What is Protocol Extensions?
+We can adopt protocols using extensions as well as on the original type declaration. This allows you to add protocols to types you don’t necessarily own.
+
+###  What is three triggers for a local notification ?
+
+Location, Calendar, and Time Interval. A Location notification fires when the GPS on your phone is at a location or geographic region. Calendar trigger is based on calendar data broken into date components. Time Interval is a count of seconds until the timer goes off.
+
+###  Explain Selectors in ObjC
+
+Selectors are Objective-C’s internal representation of a method name.
+
+
+### What is Remote Notifications attachment’s limits ?
+ 
+ We can be sent with video or image with push notification. But maximum payload is 4kb. If we want to sent high quality attachment, we should use Notification Service Extension.
+ 
+ 
+### What is ARC and how is it different from AutoRelease?
+ Autorelease is still used ARC. ARC is used inside the scope, autorelease is used outside the scope of the function.
+ 
+ 
+ 
+### Are you using CharlesProxy ? Why/why not ?
+ 
+ If I need a proxy server that includes both complete requests and responses and the HTTP headers then I am using CharlesProxy. With CharlesProxy, we can support binary protocols, rewriting and traffic throttling.
+ 
+ 
+### Explain unwind segue
+ An unwind segue moves backward through one or more segues to return the user to a scene managed by an existing view control
+ 
+ 
+### Explain UNNotification Content
+ UNNotification Content stores the notification content in a scheduled or delivered notification. It is read-only.
+ 
+ 
+### Explain NSManagedObjectContext
+ Its primary responsibility is to manage a collection of managed objects.
+ 
+ 
+ 
+###  Explain service extension
+ The service extension lets us the chance to change content in the notification before it is presented.
+ 
+  
+### Explain content extension
+ 
+ The content extension gives us the tools, we have in an app to design the notification.
+ 
+ 
+ 
+### What is intrinsic content size?
+ 
+ Every view that contains content can calculate its intrinsic content size. The intrinsic content size is calculated by a method on every UIView instance. This method returns a CGSize instance
+ 
+### What is Instruments?
+ Instrument is a powerful performance tuning tool to analyze that performance, memory footprint, smooth animation, energy usage, leaks and file/network activity.
+ 
+### What is Deep Linking?
+ Deep linking is a way to pass data to your application from any platform like, website or any other application. By tapping once on link, you can pass necessary data to your application.
+ 
+### What is Optional Binding ?
+ We are going to take optional value and we are going to bind it non optional constant. We used If let structure or Guard statement.
+ 
+ 
+### Explain super keyword in child class
+We use the super keyword to call the parent class initializer after setting the child class stored property.
+
+### Explain Polymorphism
+Polymorphism is the ability of a class instance to be substituted by a class instance of one of its subclasses.
+
+### Explain In-app Purchase products and subscriptions
+
+
+* Consumable products: can be purchased more than once and used items would have to re-purchase.
+
+* Non-consumable products: user would be able to restore this functionality in the future, should they need to reinstall the app for any reason. We can also add subscriptions to our app.
+
+* Non-Renewing Subscription: Used for a certain amount of time and certain content.
+
+* Auto-Renewing Subscription: Used for recurring monthly subscriptions.
+
+
+### What is Protocol?
+
+A protocol defines a blueprint of methods, properties and other requirements that suit a particular task or piece of functionality. The protocol can then be adopted by a class, structure, or enumeration to provide an actual implementation of those requirements.
+
+
+
+### Explain JSONEncoder and JSONDecoder in Swift4
+
+* Decodable protocol, which allows us to take data and create instances of our object, populated with the data passed down from the server.
+
+* Encodable protocol to take instances of our object and turn it into data. With that data, we can store it to the files, send it to the server, whatever you need to do with it.
+
+
+
+### What is NotificationCenter ?
+
+NotificationCenter is an observer pattern, The NSNotificationCenter singleton allows us to broadcast information using an object called NSNotification.
+
+The biggest difference between KVO and NotificationCenter is that KVOtracks specific changes to an object, 
+while NotificationCenter is used to track generic events.
+
+
+### Why is inheritance bad in swift?
+* 
+* We cannot use superclasses or inheritance with Swift value types.
+* Upfront modelling
+* Customization for inheritance is an imprecise
+
+
+###  Explain Sequence in Swift
+
+Sequence is a basic type in Swift for defining an aggregation of elements that distribute sequentially in a row. All collection types inherit from Sequence such as Array, Set, Dictionary.
+
+
+
+### Explain .gitignore
+
+.gitignore is a file extension that you tell Git server about document types, and folders that you do not want to add to the project or do not want to track changes made in Git server projects.
+
+
+###  What is an “app ID” and a “bundle ID” ?
+
+A bundle ID is the identifier of a single app. For example, if your organization’s domain is xxx.com and you create an app named Facebook, you could assign the string com.xxx.facebook as our app’s bundle ID.
+An App ID is a two-part string used to identify one or more apps from a single development team. You need Apple Developer account for an App ID
+
+###  What is Factory method pattern?
+Factory method pattern makes the codebase more flexible to add or remove new types. To add a new type, we just need a new class for the type and a new factory to produce it like the following code
+
+###  Explain AVFoundation framework
+
+We can create, play audio and visual media. AVFoundation allows us to work on a detailed level with time-based audio-visual data. With it, we can create, edit, analyze, and re-encode media files. AVFoundation has two sets of API, one that’s video, and one that is audio.
+
+###  What’s the difference between a xib and a storyboard?
+Both are used in Xcode to layout screens (view controllers). A xib defines a single View or View Controller screen, while a storyboard shows many view controllers and also shows the relationship between them.
+
+
+### Explain how to add frameworks in Xcode project?
+
+* First, choose the project file from the project navigator on the left side of the project window
+
+* Then choose the target where you want to add frameworks in the project settings editor
+
+* Choose the “Build Phases” tab, and select “Link Binary With Libraries” to view all of the frameworks
+
+* To add frameworks click on “+” sign below the list select framework and click on add button.
+
+
+
+### Explain IteratorProtocol
+
+The IteratorProtocol protocol is tightly linked with the Sequence protocol. Sequences provide access to their elements by creating an iterator, which keeps track of its iteration process and returns one element at a time as it advances through the sequence. There are very good examples on the differences ofIteratorProtocol from for loop and while loop.
+
+
+### Explain differences between WKWebView and UIWebView
+WKWebView has own cookie storage and its not share by the whole app and all other web views like in the case of (UIWebView).
+
+
+
+### What is offset?
+
+If we want to arrange the button at Bottom-Right of superview with spacing 20 Pts, we use view attribute of UIButton or UILabel for reference to view attribute of superview and use .offset(x) for set padding.
+
+### Explain rethrows keyword
+
+rethrows is a pretty special keyword that you can use in conjunction with closures that can throw errors.
+
+The rethrows keyword indicates to the compiler that the outer function is a throwing function only if the closure passed in throws an error that is propagated to the current scope.
+
+Basically with rethrows, we can use throw inside the closure. When the error handlers are called within the function we use throws.
+
+
+### Explain @objc inference
+
+We can tag a Swift declaration with @objc to indicate that it should be available to Objective-C. In Swift 3 many declarations were automatically inferred to be made available to Objective-C. The most common place for this is any Swift method we want to refer to using a selector.
+
+
+### What is Safe area ?
+Safe area allows us to create constraints to keep our content from being hidden by UIKit bars like the status, navigation or tab bar. Previously we used topLayoutGuide and bottomLayoutGuide.
+
+
+
+###  Explain Content offset
+
+When we scroll a scrollView, it modifies a property known as content offset. Content offset is a point at which the origin of the contentView, that is the bounds rectangle, is offset from the origin of the scrollView.
+Using this value, the scrollView can compute its new bounds and redraw any of its subviews.
+
+
+###   Explain Queues
+Queues are used to store a set of data, but are different in that the first item to go into this collection, will be the first item to be removed. Also well known as FIFO which means, ‘first in first out’.
+
+
+###  What is the difference between Array vs NSArray ?
+Array can only hold one type of data, NSArray can hold different types of data. The array is value type, NSArray is immutable reference type.
+
+### What is themutating keyword?
+
+The mutating keyword is used to let variables be modified in a struct or enum. If we need to modify the properties of a value type, we have to use the mutating keyword in the instance method.
+
+
+### What’s the difference between MKAnnotation and MKPointAnnotation?
+
+***MKAnnotation***  is a protocol. Typically, we will create a NSObject subclass that implements this protocol. Instances of this custom class will then serve as your map annotation.
+
+***MKPointAnnotation*** is a class that implements MKAnnotation. We can use it directly if we want our own business logic on the annotation.
+
+
+### What is the difference Stack and Heap ?
+
+Our code takes up some space in the iOS. The size of this is sometimes fixed and sometimes it can change according to what the user will enter during the program. Basically we have two different methods because of this difference: Stack and Heap
+
+Stack is used and automatically removes itself from memory after work is finished. But in Heap the user could do it by writing manual code for deleting from memory.
+
+Stack;
+
+* Stack is easy to use.
+* It’s kept in RAM on the computer.
+* Created variables are automatically deleted when they exit the stack.
+* It is quite fast compared to Heap.
+* Constructed variables can be used without a pointer.
+
+Heap;
+
+* Compared to Stack, it is quite slow.
+* It creates memory problems if not used correctly.
+* Variables are used with pointers.
+* It is created at runtime.
+
+
+###  Explain UIBezierPath
+
+UIBezierPath class allows us define custom paths that describe any shape, and use those paths to achieve any custom result we want.
+
+
+### Explain ObjectMapper for parsing JSON data
+ObjectMapper converts JSON data to strongly typed model objects. It has a two-way binding between JSON and deal with generic object and nested objects. Also we can manage subclasses.
+
+### Explain CAShapeLayer
+CAShapeLayer is a CALayer subclass, its provides hardware-accelerated drawing of all sorts of 2D shapes, and includes extra functionality such as fill and stroke colors, line caps, patterns and more.
+
+###  Explain coordinate systems in views
+
+UIkit defines a default coordinate system with the origin in the top left corner, and axis extending to the right, and down from the origin point. Views are laid out within this coordinate system to position and size them.
+
+
+### What is the purpose of using IBAction and IBOutlet ?
+
+IBAction and IBOutlet are macros defined to denote variables and methods that can be referred to in Interface Builder.
+
+IBAction resolves to void and IBOutlet resolves to nothing, but they signify to Xcode and Interface builder that these variables and methods can be used in Interface builder to link UI elements to your code.
+
+
+### Explain AlamoFire Benefits
+
+
+* AlamoFire creates a route. This means we can create the request and execute it to the server by one static function.
+* AlamoFire provides method chaining for the requests that’s returned, which makes it easy for adding headers,and handling responses.
+* AlamoFire has multiple response handlers hat’s returned in binary form, text, parse JSON, and we can even use multiple of these for a given request.
+* AlamoFire has the method chaining allows for response validation. We can call validation to check for the status code of the HTTP response, the content type, or any custom validation you might need to do for our app.
+* AlamoFire gives us that use a couple of protocols, URLConvertible, and URLRequestConvertible. These protocols can be passed in when creating a request.
+* AlamoFire provides extensions can be passed in to create the request.
+
+
+### Explain Semaphore in iOS
+When we do thread operations on iOS, it works. The application is quite effective in preventing data from interfering with different processes while downloading data to the device. Or we can time out the process by checking the wait time.
+As a structure, more than one working process is kept waiting according to the situation and the other process are engaged in the processes such as entering the circuit when completed.
+
+### Explain Tuples
+
+Tuples are a compound type in Swift, that means we can hold multiple values like a structure. Tuples hold very value types of data but we created data structures (like dictionaries).
+
+### Explain the difference between Generics and AnyObject in Swift
+Generics are type safe, meaning if you pass a string as a generic and try to use as a integer the compiler will complain and you will not be able to compile your. Because Swift is using Static typing, and is able to give you a compiler error.
+
+If you use AnyObject, the compiler has no idea if the object can be treated as a String or as an Integer. It will allow you to do whatever you want with it.
+
+
+### Explain how does UIEdgeInsetsMake work?
+
+According to the documentation: We can use this method to add cap insets to an image or to change the existing cap insets of an image. In both cases, you get back a new image and the original image remains untouched. We use the amount of pixels what we want to make unstretchable in the values of the UIEdgeInsetsMake function. Goal is to keep original rounded corners of image. With UIEdgeInsets, we can specify how many pixels to the top, left, bottom, and right stretching the image.
+Syntax : UIEdgeInsets(top: 0, left: 0, bottom: 10, right: 0)
+
+###  What is the meaning of id ?
+id is a pointer to any type, it always points to an Objective-C object. The AnyObject protocol is similar and it helps bridge the gap between Swift and Objective-C.
+
+
+
+### Why it is better to use higher-order functions?
+
+Functions that take another function as a parameter, or return a function, as a result, are known as higher-order functions. Swift defines these functions as CollectionType.
+The very basic higher-order function is a filter.
+
+
+### What is the difference between UIKit and SwiftUI ?
+
+UIKit is an imperative event-driven framework for building User Interfaces for iOS platform. SwiftUI is a declarative framework for building User Interfaces for building User Interfaces for Apple platform.
+
+
+### Explain Implicit Expression
+
+Implicit Expression well-known name is Implicit Member Expression which is a way to access a member of a type. We use it to prevent global constant usage.
+
+### Explain subscripts
+Subscripts are analogous to methods. Classes, structures, and enumerations can define subscripts, which are shortcuts for accessing the member elements of a collection, list, or sequence.
+
+###  What is the difference between CustomStringConvertible and CustomDebugStringConvertible?
+
+If the value is a String, return that value. If the value is CustomStringConvertible or CustomDebugStringConvertible, return String(reflecting:)
+
+### What are bundles?
+Bundles are how iOS represents our executable code and other resources stored on our drive. Most important thing is, bundles are responsible for loading the localized strings used by your app.
+
+
+###  Explain UICollectionViewFlowLayout
+
+UICollectionViewFlowLayout is automatically trying to fit in as many items as it can within a line before it wraps to the next one. We can get multiple columns if we change our item size.
+
+### Explain the difference between a while loop and repeat while
+A while loop checks the condition before the loop code, whereas repeat while checks the condition after. If we want to check each time to see the condition is true, we have to use for in loop.
+
+### What does agile process do?
+The agile process only takes into account the needs specified by the customer, converted into a user story and prioritized by the customer. In short, the agile process does not think about the future.
+
+
+### Why is everything in a do-catch block?
+In Swift, errors are thrown and handled inside of do-catch blocks. This allows us to customize our error handling and perform specific actions based on the error. With a do-catch statement, we can usetry. This allows us to check meaningful errors.
+
+### Explain enumerated()
+According to Apple, if we need the index for each element along with its value, you can use enumerated()method to iterate over the array.
+
+### Explain NSCache
+
+NSCache is an NSDictionary that automatically clears itself out when our app receives a memory warning. NSCache is thread-safe.
+
+### Explain abs() function
+
+You use the abs() function to calculate the positive difference between the one value to another value
+
+
+### What is the difference between try? and try! ?
+
+try? allows us to ignore our error to become nil. We use try! it for our function to never encounter an error.
+
+
+###  Explain OptionSet
+
+Option sets are similar to enums, but OptionSet designs to work more than one at a time. We can say enums are an exclusive state, OptionSet is an inclusive state. For creating an OptionSet, there is one requirement which is the rawValue the property of integer type, and an initializer. Option sets aren’t collections.
+
+### Explain the Single Responsibility Principle
+
+It is a software development principle that enables us to easily understand objects and object functions. It ranks first among the SOLID principles. According to this principle, it must be the only task of a method or class. If we speak for the method, the function loaded in a method should not be more than one.
+
+
+
+### What is the difference between setUp() and tearDown() in XCTestCase ?
+
+We use these two methods for allocation. setUp method calls before test methods are executed. tearDown method calls after all test methods are executed for cleaning up any changes we made in data.
+
+### Explain Asset Catalogs
+We use asset catalogs to store images such as icons or images. Since iOS 11, we can store named colors in asset catalogs. Another lesser-known feature of asset catalogs is that we can store arbitrary data assets. With iOS 13 now we can define dark mode icons and images
+
+
+
+
+### What can breakpoint do?
+
+* We can add our forgotten line of code at a breakpoint by double-clicking the breakpoint and opening the editor.
+* We can change the state of our app. p is another LLDB command to see a debug representation of the current object.
+* We can use the po command in the console to print a debug description and see the current values.
+* We can change the value to test our code, without having compile and return your code.
+
+
+###  Explain Opaque Return Types
+
+I have a class that uses a protocol. It returns an error when I return this class with a function. Because the Swift compiler does not know what these classes are. Therefore, there is no problem when ***some*** is added to the return class, struct or protocol of the error function.
+
+
+###Explain Autoclosures
+@autoclosure creates an automatic closure around the expression. When we write an expression, @autoclosure is automatically wrapped into a closure.
+
+
+
+
+### Explain UIViewRepresentable requirements
+
+The UIViewRepresentable protocol has two requirements we need to add: a makeUIView(context:) method and an updateUIView(_:context:) a method that configures the view and responds to any changes.
+
+
+
+### Explain Scene Delegate
+
+With scene delegate, iOS applications can have more than one scene that allows us to build multi-window apps on iOS and iPadOS.
