@@ -5,8 +5,11 @@
 Cocoa | Cocoa Touch
 --- | --- |
 1. Application development environments for OS X |1. Application development environments for iOS
+--- | --- |
 2. Includes the Foundation and AppKit frameworks | 2. Includes Foundation and UIKit frameworks
+--- | --- |
 3. Used to refer any class/object which is based on the Objective-C runtime & inherits from the root class | 3. Used to refer the application development using any programmatic interface
+--- | --- |
 
 
 ### 2. Which JSON framework is supported by iOS?
