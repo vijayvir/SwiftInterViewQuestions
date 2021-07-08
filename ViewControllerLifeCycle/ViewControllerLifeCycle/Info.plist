@@ -62,5 +62,7 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>NEW_SETTINGFirst</key>
+	<string>$(NEW_SETTINGFirst)</string>
 </dict>
 </plist>

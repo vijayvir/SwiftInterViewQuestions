@@ -13,6 +13,8 @@ class ViewController: UIViewController {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         print(#function)
+        print(Bundle.main.infoDictionary?["NEW_SETTINGFirst"] ?? "****")
+
     }
     override func viewDidLoad() {
         super.viewDidLoad()
