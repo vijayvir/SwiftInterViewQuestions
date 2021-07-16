@@ -32,3 +32,22 @@ A queue is a list where you can only insert new items at the back and
   * **Pop** Removes and returns the last element of the collection.
   * **Top** or **peek** Returns the item at the top of the stack.
   
+  
+## Important points of swift 
+
+  * Closure and Functions are reference type. 
+
+
+### Inheritence 
+
+* Convience 
+* Desiginated 
+* Required 
+
+
+
+
+  
+  
+  
+  
